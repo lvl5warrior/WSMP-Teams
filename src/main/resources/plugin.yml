@@ -1,0 +1,40 @@
+name: WSMP-Teams
+version: '1.0.0'
+main: com.warriorssmp.teams.TeamsPlugin
+api-version: '1.21'
+author: WarriorsSMP
+depend: [Vault]
+softdepend: [PlaceholderAPI, TAB]
+description: WSMP teams plugin - private team chat, shared enderchest, team portals, and RuneScape-style team leveling.
+
+commands:
+  team:
+    description: Manage your WSMP team
+    usage: |
+      /team create <name>
+      /team disband
+      /team invite <player>
+      /team acceptinvite <team>
+      /team declineinvite <team>
+      /team apply <team> <message>
+      /team applications
+      /team acceptapp <player>
+      /team denyapp <player>
+      /team kick <player>
+      /team leave
+      /team leaveconfirm
+      /team promote <player>
+      /team demote
+      /team donate <amount>
+      /team portal set <1-3>
+      /team portal <1-3>
+      /team enderchest
+      /team info
+      /team list
+      /team gui
+      /team guide
+
+permissions:
+  wsmpteams.admin:
+    description: Bypass for team restrictions (join cooldown, size caps, PvP protection etc)
+    default: op

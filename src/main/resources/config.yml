@@ -1,0 +1,50 @@
+# WSMP-Teams Configuration
+
+# How many seconds the team portal takes to activate once used.
+# It's a channeled cast, not instant - moving or taking damage cancels it.
+portal-cast-seconds: 5
+
+# Cooldown (in minutes) a portal goes on after ANY team member uses it.
+# The cooldown belongs to the portal itself, shared by the whole team.
+portal-cooldown-minutes: 15
+
+# Days a player must wait after leaving a team before they can join or create another.
+leave-lockout-days: 3
+
+# Seconds a player has to type /team leaveconfirm after /team leave before it expires.
+leave-confirmation-window-seconds: 30
+
+# Size of the shared team enderchest (must be a multiple of 9, max 54).
+enderchest-size: 54
+
+# Total gold that must be donated to a team to reach level 99.
+# Uses the same RuneScape-style XP curve shape as WSMP-SimpleSell's item leveling,
+# scaled so level 99 lands here instead of RuneScape's 200,000,000 xp.
+target-max-gold: 5030000000
+
+# Team size caps. Grows smoothly from starting-member-cap at level 1
+# to max-member-cap at level 99.
+starting-member-cap: 10
+max-member-cap: 50
+
+# Team portal slot unlocks. A team can have at most max-portals set at once,
+# unlocked in stages as it levels up.
+first-portal-level: 10
+second-portal-level: 40
+third-portal-level: 70
+max-portals: 3
+
+# Whether to inject "[TeamName]" into chat messages sent by team members.
+# If you use TAB (or another plugin) for chat formatting instead, turn this off
+# and use the %wsmpteams_tag% / %wsmpteams_team% PlaceholderAPI placeholder in
+# its chat-format config instead, so the two don't fight over the message format.
+chat-prefix-enabled: true
+
+# Whether to show "[TeamName]" next to players in the tab list via our own scoreboard team.
+# Ignored automatically if TAB is installed - TAB owns tablist/nametag scoreboard teams,
+# so on a TAB server use the %wsmpteams_tag% / %wsmpteams_team% / %wsmpteams_role%
+# placeholders in TAB's own tablist-name-formatting / nametag config instead.
+tablist-prefix-enabled: true
+
+# How often (in minutes) all team data is autosaved to disk.
+autosave-minutes: 5
