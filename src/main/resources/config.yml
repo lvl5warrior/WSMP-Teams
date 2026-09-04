@@ -1,0 +1,63 @@
+# WSMP-Teams Configuration
+
+# How many seconds the team portal takes to activate once used.
+# It's a channeled cast, not instant - moving or taking damage cancels it.
+portal-cast-seconds: 5
+
+# Cooldown (in minutes) applied to a player after they use a portal.
+# Each player has their own independent cooldown per portal - one member
+# using it doesn't lock anyone else out.
+portal-cooldown-minutes: 15
+
+# Days a player must wait after leaving a team before they can join or create another.
+leave-lockout-days: 3
+
+# Seconds a player has to type /team leaveconfirm after /team leave before it expires.
+leave-confirmation-window-seconds: 30
+
+# Size of the shared team enderchest's actual storage (must be a multiple
+# of 9, max 45) - a 9-slot row for the back button is always added on top
+# of this, and Bukkit inventories can't exceed 54 slots total, so 45 is as
+# large as the storage portion itself can go.
+enderchest-size: 45
+
+# Total gold that must be donated to a team to reach level 99.
+# Uses the same RuneScape-style XP curve shape as WSMP-SimpleSell's item leveling,
+# scaled so level 99 lands here instead of RuneScape's 200,000,000 xp.
+target-max-gold: 5030000000
+
+# Team size caps. Grows smoothly from starting-member-cap at level 1
+# to max-member-cap at level 99.
+starting-member-cap: 10
+max-member-cap: 50
+
+# Team portal slot unlocks. A team can have at most max-portals set at once,
+# unlocked in stages as it levels up.
+first-portal-level: 10
+second-portal-level: 40
+third-portal-level: 70
+max-portals: 3
+
+# Whether to inject "[TeamName]" into chat messages sent by team members.
+# If you use TAB (or another plugin) for chat formatting instead, turn this off
+# and use the %wsmpteams_tag% / %wsmpteams_team% PlaceholderAPI placeholder in
+# its chat-format config instead, so the two don't fight over the message format.
+chat-prefix-enabled: true
+
+# Whether to show "[TeamName]" next to players in the tab list via our own scoreboard team.
+# Ignored automatically if TAB is installed - TAB owns tablist/nametag scoreboard teams,
+# so on a TAB server use the %wsmpteams_tag% / %wsmpteams_team% / %wsmpteams_role%
+# placeholders in TAB's own tablist-name-formatting / nametag config instead.
+tablist-prefix-enabled: true
+
+# How often (in minutes) all team data is autosaved to disk.
+autosave-minutes: 5
+
+# SOS flare - any team member can use /team sos to alert the whole team and
+# request a teleport to their location. Cooldown is per-player, not shared -
+# one member using it doesn't stop anyone else from using their own.
+sos-cooldown-minutes: 60
+
+# How many seconds an SOS flare stays open for teammates to accept with
+# /team sosaccept before it expires.
+sos-window-seconds: 60
